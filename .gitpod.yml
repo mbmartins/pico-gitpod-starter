@@ -1,0 +1,13 @@
+image:
+  file: Dockerfile
+
+tasks:
+  - name: Init
+    init: |
+      git submodule update --init --recursive
+      mkdir -p build
+      cd build
+      cmake ..
+    command: |
+      cd build
+      make -j4
